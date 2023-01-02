@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography } from '@mui/material';
+import { AppBar, Button, Tab, Tabs, Toolbar, Typography } from '@mui/material';
 import React from 'react'
 
 const Header = () => {
@@ -8,6 +8,14 @@ const Header = () => {
         <Typography>
           NavBar
         </Typography>
+        <Tabs sx={{ textColor:'inherit' }}>
+          <Tab label='Products' />
+          <Tab label='Services' />
+          <Tab label='Contact' />
+          <Tab label='About' />
+        </Tabs>
+        <Button sx={{ ml:'auto' }}>Login</Button>
+        <Button >Sing up</Button>
       </Toolbar> 
     </AppBar>
   );
