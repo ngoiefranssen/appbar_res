@@ -36,11 +36,11 @@ const Header = () => {
                   <Tab label='Contact' />
                   <Tab label='About' />
                 </Tabs>
-                <Button sx={{ ml: 'auto' }} variant='contained'>Login</Button>
-                <Button sx={{ ml: '10px' }} variant='contained'>Sing up</Button>
+                <Button sx={{ ml: 'auto' }} variant='contained'>Login{" "}</Button>
+                <Button sx={{ ml: '10px' }} variant='contained'>Sing up{" "}</Button>
               </>
             )
-          }; 
+          }
         </Toolbar> 
       </AppBar>
     </React.Fragment>
