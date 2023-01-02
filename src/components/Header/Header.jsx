@@ -3,9 +3,10 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <AppBar>
+    <AppBar sx={{ background: '#063970' }}>
       <Toolbar>
         <Typography>
+          NavBar
         </Typography>
       </Toolbar> 
     </AppBar>
