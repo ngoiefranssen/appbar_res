@@ -2,6 +2,10 @@ import { Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText } 
 import React from 'react'
 import { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
+// import { Pageview } from '@mui/icons-material';
+
+
+const pages = ["Products", "Services", "Contact", "About", "Login", "SingUp"];
 
 const SiderBar = () => {
     const [openDrawer, setOpenDrawer] = useState(false)
@@ -9,13 +13,18 @@ const SiderBar = () => {
         <React.Fragment>
              <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
                 <List>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <ListItemText>Login</ListItemText>  
-                        </ListItemIcon>
-                    </ListItemButton>
+                    {
+                        pages.map((page, index) => (
+                            <ListItemButton key={index}> {/* onClick={() => setOpenDrawer(false)} */}
+                                <ListItemIcon>
+                                    <ListItemText>{page}</ListItemText>  
+                                </ListItemIcon>
+                            </ListItemButton>
+                        ))
+                    }
+                    
                 </List>
-                <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
+                <IconButton sx={{ color:'white', ml:'auto' }} onClick={() => setOpenDrawer(!openDrawer)}>
                     <MenuIcon />
                 </IconButton>
             </Drawer>

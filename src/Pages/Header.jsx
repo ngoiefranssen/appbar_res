@@ -4,6 +4,7 @@ import { useState } from 'react';
 import SiderBar from './SiderBar';
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 
+const pages = ["Products", "Services", "Contact", "About"]
 const Header = () => {
 
   const [value, setValue] = useState();
@@ -18,23 +19,26 @@ const Header = () => {
         <Toolbar>
           <ProductionQuantityLimitsIcon />
           {
-            isMatch ?(
+            isMatch ? (
               <>
-                <Typography>Shop</Typography>
+                <Typography sx={{ fontSize: '1.5rem', paddingLeft:'10%' }}>Shop</Typography>
                 <SiderBar />
               </>
             ) : (
               <>
                 <Tabs
+                  sx={{ ml: 'auto' }}
                   textColor='inherit'
                   value={value}
                   onChange={(e, value) => setValue(value)}
                   indicatorColor='secondary'
                 >
-                  <Tab label='Products' />
-                  <Tab label='Services' />
-                  <Tab label='Contact' />
-                  <Tab label='About' />
+                  {
+                    pages.map((page, index) => (
+                    <Tab key={index} label={page} />
+                      
+                    ))
+                  }
                 </Tabs>
                 <Button sx={{ ml: 'auto' }} variant='contained'>Login{" "}</Button>
                 <Button sx={{ ml: '10px' }} variant='contained'>Sing up{" "}</Button>
